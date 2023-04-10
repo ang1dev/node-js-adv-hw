@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "0cbb90ea-0a50-4bcd-9649-2c2ba55585bb",
+		"name": "Zookepers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllZookeepers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewZookeepper",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"age\": 23,\r\n  \"location\": \"Skopje\",\r\n  \"isActive\" false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/addnew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						"addnew"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editZookeepper",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"location\": \"Rosoman\"\r\n\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/642dc5ec406c8873261855e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						"642dc5ec406c8873261855e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteZookeepper",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/delete/642dc1265bf2c3cc2db3ee4b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						"delete",
+						"642dc1265bf2c3cc2db3ee4b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAnimals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/api/animals/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"animals",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewAnimal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n  \"name\": \"Blacky\",\r\n  \"type\": \"Bear\",\r\n  \"age\": 3,\r\n  \"location\": \"Belgrade\",\r\n  \"gender\": \"M\",\r\n  \"characteristics\": {\r\n    \"food\": [\"honey\", \"apple\", \"watermelon\", \"cucumber\"],\r\n    \"colour\": \"black\",\r\n    \"isDangerous\": true,\r\n    \"weight\": 250,\r\n    \"enclosure\": \"mountain\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/animals/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"animals",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAnimalnfo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/zookeepers/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"zookeepers",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAnimal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/delete/642dc1265bf2c3cc2db3ee4b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						"delete",
+						"642dc1265bf2c3cc2db3ee4b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
