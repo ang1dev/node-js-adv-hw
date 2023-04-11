@@ -5,10 +5,10 @@ import zookeeperValidator from '../middlewares/zookeeper-validator.middleware.js
 
 const router = express.Router();
 
-router.get('/',zookeeperValidator,ZookeeperController.getAllZookeppers)
+router.get('/',ZookeeperController.getAllZookeppers)
 router.post('/addnew',zookeeperValidator,ZookeeperController.addZookepper);
-router.put('/:id',zookeeperValidator,ZookeeperController.editZookepper)
-router.delete('/delete/:id',zookeeperValidator,ZookeeperController.deleteZookeper)
+router.put('/:id',ZookeeperController.editZookepper)
+router.delete('/delete/:id',ZookeeperController.deleteZookeper)
 
 
 export default router;

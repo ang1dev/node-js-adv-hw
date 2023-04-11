@@ -5,10 +5,8 @@ import { ObjectId } from "mongodb";
 export default class ZookepperModel {
     static async getAllZookeppers() {
         const collection = await getDb().collection('zookeeper')
-      
         const zookeepers = await collection.find().toArray();
-        console.log(zookeepers)
-        console.log('zookepers', zookeepers);
+        // console.log('zookepers', zookeepers);
         return zookeepers
     }
 

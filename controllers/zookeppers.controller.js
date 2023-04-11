@@ -5,23 +5,11 @@ export default class ZookeeperController {
     static async getAllZookeppers(req, res) {
         try {
             const zookeepers = await ZookepperModel.getAllZookeppers();
-            res.status(200).send(zookeepers);
+            res.status(200).send(zookeepers)
         } catch (error) {
-            res.status(500).send({ message: "Something went wrong" })
+            res.status(500).send({message: "Something wen't wrong"})
         }
     }
-
-    static async getAllByLocation(req,res){
-        try {
-            const zookeepers = await ZookepperModel.getAllByLocation(req.query);
-            res.status(200).send(zookeepers);
-        } catch (error) {
-            res.status(500).send({ message: "Something went wrong" })
-        }
-
-    }
-
-
 
     static async addZookepper(req, res) {
         try {
