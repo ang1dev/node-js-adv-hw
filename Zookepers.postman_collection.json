@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "0cbb90ea-0a50-4bcd-9649-2c2ba55585bb",
+		"name": "Zookepers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllZookeepers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewZookeepper",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Marko Stojanovski\",\r\n  \"age\": 25,\r\n  \"location\": \"Veles\",\r\n  \"isActive\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/addnew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						"addnew"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editZookeepper",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"location\": \"Gevgelija\"\r\n\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/642dc94b1e090c81e8dd15fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						"642dc94b1e090c81e8dd15fc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteZookeepper",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/zookeepers/delete/643444670fc7f17963b0137b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"zookeepers",
+						"delete",
+						"643444670fc7f17963b0137b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAnimals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/api/animals/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"animals",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewAnimal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\": \"Momi\",\r\n  \"type\": \"Cat\",\r\n  \"age\": 5,\r\n  \"location\": \"Veles\",\r\n  \"gender\": \"F\",\r\n  \"characteristics\": {\r\n    \"food\": [\"hrana za macki\", \"fish\"],\r\n    \"colour\": \"orange\",\r\n    \"isDangerous\": false,\r\n    \"weight\": 10,\r\n    \"enclosure\": \"home\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/animals/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"animals",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAnimalnfo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Kiki\",\r\n        \"age\": 10\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/animals/edit/642dcc98bfbad43ddee403fe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"animals",
+						"edit",
+						"642dcc98bfbad43ddee403fe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAnimal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/animals/delete/643573c71391fd89d3ce41d6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"animals",
+						"delete",
+						"643573c71391fd89d3ce41d6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
