@@ -1,34 +1,36 @@
-import { getDb } from "../db/mongo-connection.js";
-import { ObjectId } from "mongodb";
+import { Schema, model } from 'mongoose';
+// import validator from 'validator';
 
+const zookeeperSchema = new Schema({
+    name: {
+        type: String,
+        required: [true, 'First name is required'],
+        minLength: 5
+    },
 
-export default class ZookepperModel {
-    static async getAllZookeppers() {
-        const collection = await getDb().collection('zookeeper')
-        const zookeepers = await collection.find().toArray();
-        // console.log('zookepers', zookeepers);
-        return zookeepers
-    }
+    age: {
+        type: Number,
+        min: [18, 'Age must be greater than 18'],
+        max: 110,
+        required: [true, 'Age is required']
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    isActive: {
+        type: Boolean,
+        required: false,
+        default: false
 
-   
-    static async addZookeper(zookepper) {
-        console.log(zookepper)
-        const collection = await getDb().collection('zookeeper');
-        const addingNewZookeeper = await collection.insertOne(zookepper);
-        return { id: addingNewZookeeper.insertedId, ...zookepper }
+    },
+    animals: [{
+        type: Schema.Types.ObjectId,
+        ref: "Animal",
+    }]
 
-    }
+})
 
+const Zookeeper = model('Zookeeper', zookeeperSchema);
 
-    static async editZookeeper(zookeeperId, body) {
-        const collection = await getDb().collection('zookeeper');
-        const result = await collection.updateOne({ _id: new ObjectId(zookeeperId) }, { $set: body })
-        return result;
-    }
-
-    static async deleteZookepper(zookeeperId) {
-        const collection = await getDb().collection('zookeeper');
-        const deleteResponse = await collection.deleteOne({ _id: new ObjectId(zookeeperId) });
-        console.log(deleteResponse)
-    }
-}
+export default Zookeeper;

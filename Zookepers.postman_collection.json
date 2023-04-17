@@ -11,12 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3002/api/zookeepers/",
+					"raw": "http://localhost:4002/api/zookeepers/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"zookeepers",
@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Marko Stojanovski\",\r\n  \"age\": 25,\r\n  \"location\": \"Veles\",\r\n  \"isActive\": true\r\n}",
+					"raw": " {\r\n        \"name\": \"Marina Vikic\",\r\n        \"age\": 25,\r\n        \"location\": \"Kumanovo\",\r\n        \"isActive\": true,\r\n        \"animals\": []\r\n   \r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,12 +41,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3002/api/zookeepers/addnew",
+					"raw": "http://localhost:4002/api/zookeepers/addnew",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"zookeepers",
@@ -71,12 +71,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3002/api/zookeepers/642dc94b1e090c81e8dd15fc",
+					"raw": "http://localhost:4002/api/zookeepers/642dc94b1e090c81e8dd15fc",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"zookeepers",
@@ -101,12 +101,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3002/api/zookeepers/delete/643444670fc7f17963b0137b",
+					"raw": "http://localhost:4002/api/zookeepers/delete/643444670fc7f17963b0137b",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"zookeepers",
@@ -123,16 +123,60 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3002/api/animals/get",
+					"raw": "http://localhost:4002/api/animals/get",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"animals",
 						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Animals by Location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4002/api/animals/location/Tetovo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4002",
+					"path": [
+						"api",
+						"animals",
+						"location",
+						"Tetovo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Animals by Zookeeper",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4002/api/animals/zookeeper/643daa6bfc13a5ce3b210d97",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4002",
+					"path": [
+						"api",
+						"animals",
+						"zookeeper",
+						"643daa6bfc13a5ce3b210d97"
 					]
 				}
 			},
@@ -145,7 +189,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n \"name\": \"Momi\",\r\n  \"type\": \"Cat\",\r\n  \"age\": 5,\r\n  \"location\": \"Veles\",\r\n  \"gender\": \"F\",\r\n  \"characteristics\": {\r\n    \"food\": [\"hrana za macki\", \"fish\"],\r\n    \"colour\": \"orange\",\r\n    \"isDangerous\": false,\r\n    \"weight\": 10,\r\n    \"enclosure\": \"home\"\r\n  }\r\n}",
+					"raw": "{\r\n \"name\": \"Moli\",\r\n  \"type\": \"Giraffe\",\r\n  \"age\": 5,\r\n  \"location\": \"Gevgelija\",\r\n  \"gender\": \"F\",\r\n  \"characteristics\": {\r\n    \"food\": \"greens\",\r\n    \"colour\": \"orange\",\r\n    \"isDangerous\": false,\r\n    \"weight\": 50,\r\n    \"enclosure\": \"home\"\r\n  },\r\n  \"zookeeper\":{\r\n         \"name\": \"Mario Kikiritkov\",\r\n        \"age\": 42,\r\n        \"location\": \"Strumica\",\r\n        \"isActive\": false\r\n\r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -153,12 +197,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3002/api/animals/add",
+					"raw": "http://localhost:4002/api/animals/add",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"animals",
@@ -175,7 +219,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"name\": \"Kiki\",\r\n        \"age\": 10\r\n        \r\n    }",
+					"raw": "{\r\n        \"name\": \"Kiki\",\r\n        \"age\": 55\r\n        \r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -183,17 +227,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3002/api/animals/edit/642dcc98bfbad43ddee403fe",
+					"raw": "http://localhost:4002/api/animals/edit/643b022847eae4b948e94b34",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"animals",
 						"edit",
-						"642dcc98bfbad43ddee403fe"
+						"643b022847eae4b948e94b34"
 					]
 				}
 			},
@@ -214,17 +258,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3002/api/animals/delete/643573c71391fd89d3ce41d6",
+					"raw": "http://localhost:4002/api/animals/delete/643b022847eae4b948e94b34",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3002",
+					"port": "4002",
 					"path": [
 						"api",
 						"animals",
 						"delete",
-						"643573c71391fd89d3ce41d6"
+						"643b022847eae4b948e94b34"
 					]
 				}
 			},

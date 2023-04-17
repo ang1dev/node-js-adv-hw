@@ -1,10 +1,10 @@
-import ZookepperModel from "../models/zookeppers.model.js";
+import ZookeeperService from "../services/zookeeper.service.js";
 
 export default class ZookeeperController {
 
     static async getAllZookeppers(req, res) {
         try {
-            const zookeepers = await ZookepperModel.getAllZookeppers();
+            const zookeepers = await ZookeeperService.getAllZookeppers();
             res.status(200).send(zookeepers)
         } catch (error) {
             res.status(500).send({message: "Something wen't wrong"})
@@ -14,7 +14,7 @@ export default class ZookeeperController {
     static async addZookepper(req, res) {
         try {
             console.log(req);
-            const zookeper = await ZookepperModel.addZookeper(req.body);
+            const zookeper = await ZookeeperService.addZookeper(req.body);
             res.status(200).send(zookeper);
             console.log(req.body)
 
@@ -26,7 +26,7 @@ export default class ZookeeperController {
 
      static async editZookepper(req, res) {
         try {
-            const editZookeper = await ZookepperModel.editZookeeper(req.params.id, req.body);
+            const editZookeper = await ZookeeperService.editZookeeper(req.params.id, req.body);
             res.status(200).send(editZookeper);
         } catch (error) {
             res.status(500).send(error)
@@ -35,7 +35,7 @@ export default class ZookeeperController {
 
     static async deleteZookeper(req, res) {
         try {
-            await ZookepperModel.deleteZookepper(req.params.id);
+            await ZookeeperService.deleteZookepper(req.params.id);
             res.sendStatus(200);
         } catch (error) {
             res.status(500).send({ message: "Something went wrong" })

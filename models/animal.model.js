@@ -1,43 +1,48 @@
-import { getDb } from "../db/mongo-connection.js";
-import { ObjectId } from "mongodb";
+import { Schema, model } from 'mongoose';
 
-export default class AnimalModel {
-    static async getAllAnimals(query) {
-        console.log(query)
-        try {
-            const collection = await getDb().collection('animals');
-            var animals = await collection.find().toArray()
-            if(query.location){
 
-            return animals.filter(s => s.location == query.location)
-             
-            }
-            return animals;
-        } catch (error) {
-            console.log(error);
-        }
 
+
+const animalrSchema = new Schema({
+    name: {
+        type: String,
+        required: [true, 'First name is required'],
+        minLength: 2
+    },
+
+    age: {
+        type: Number,
+        min: [1, 'Age must be a postive number'],
+        max: [3000, 'Age must be a postive number'],
+        required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    gender: {
+        type: String,
+        required: true,
+        enum: ["M", "F"]
+
+    },
+    characteristics: {
+
+        food: { type: String, required: false },
+        colour: { type: String, required: false },
+        isDangerous: { type: Boolean, default: false },
+        weight: { type: Number, required: false, min: 0 },
+        enclosure: { type: String, required: true }
+    },
+
+    zookeeper: {
+        type: Schema.Types.ObjectId,
+        ref: "Zookeeper",
+        required: false,
     }
 
-  static async addAnimal(animal){
-        const collection = await getDb().collection('animals');
-        // console.log(collection)
-        const newAnimal = await collection.insertOne(animal);
-        return { id: newAnimal.insertedId, ...animal};
+})
 
-    }
+const Animal = model('Animal', animalrSchema);
 
-    static async updateAnimal(animalId,body){
-        const collection = await getDb().collection('animals');
-        const result = await collection.updateOne({ _id: new ObjectId(animalId) }, { $set: body })
-        return result;
-    }
-
-    static async deleteAnimal(animalId){
-        const collection = await getDb().collection('animals');
-        const result = await collection.deleteOne({_id:new ObjectId(animalId)})
-        console.log(`Animal with id: ${animalId} was deleted`)
-    
-    }
-
-}
+export default Animal;
